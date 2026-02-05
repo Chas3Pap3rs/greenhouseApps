@@ -46,8 +46,9 @@ def estimate_rows_per_segment(sample_df, target_bytes):
     sample_bytes = len(sample_csv.encode('utf-8'))
     bytes_per_row = sample_bytes / len(sample_df)
     
-    # Calculate rows per segment with safety margin
-    rows_per_segment = int((target_bytes * 0.95) / bytes_per_row)  # 95% to be safe
+    # Calculate rows per segment with safety margin, then double it
+    # Previous exports showed max 24MB with conservative estimate, so 2x is safe
+    rows_per_segment = int((target_bytes * 0.95) / bytes_per_row) * 2
     
     return max(rows_per_segment, 100)  # Minimum 100 rows per segment
 
