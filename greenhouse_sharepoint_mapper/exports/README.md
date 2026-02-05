@@ -74,15 +74,23 @@ exports/
 **Command:** `python export_segmented_ai.py`  
 **Output:** `segmented_exports/YYYY.MM.DD_HH.MM.SS/segment_001_of_XXX.csv`
 
-#### `export_segmented_ai_full.py`
+#### `export_segmented_ai_full.py` ⭐ OPTIMIZED
 **Purpose:** Segmented full export WITH resume_content  
 **Database:** greenhouse_candidates_ai  
 **Size:** Multiple files, each <50MB  
 **Resume Content:** ✅ Yes  
-**Segments:** Auto-calculated (typically 20-30 segments)  
+**Segments:** ~14 segments (optimized with 2x multiplier)  
 **Use Case:** Zapier Tables with resume_content, offline processing in chunks  
 **Command:** `python export_segmented_ai_full.py`  
-**Output:** `segmented_exports/YYYY.MM.DD_HH.MM.SS_full/segment_001_of_XXX_full.csv`
+**Output:** `ai_database/segmented/YYYY.MM.DD_HH.MM.SS_full/segment_001_of_XXX_full.csv`
+
+**Recent Optimizations (Feb 2026):**
+- ✅ **2x multiplier** - Reduced from 27 to 14 segments for faster uploads
+- ✅ **QUOTE_ALL** - All CSV fields quoted to prevent Zapier parsing errors
+- ✅ **Null byte removal** - Cleans `\x00` characters that corrupt CSV
+- ✅ **Content truncation** - Limits resume_content to 100KB max
+- ✅ **Newlines preserved** - Resume content remains human-readable
+- ✅ **Permanent SharePoint links** - All links use `webUrl` (never expire)
 
 ---
 

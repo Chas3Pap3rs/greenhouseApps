@@ -518,6 +518,48 @@ cd utilities/analysis
 python analyze_failed_extractions.py
 ```
 
+**SharePoint links showing "Invalid request token" errors:**
+```bash
+# CRITICAL: Always use permanent webUrl, never @microsoft.graph.downloadUrl
+# The downloadUrl contains tempauth tokens that expire after 1-24 hours
+# All scripts have been fixed to use webUrl (permanent links)
+
+# If you encounter expired links in the database:
+cd utilities/fixes
+python fix_expired_sharepoint_links.py --dry-run  # Preview changes
+python fix_expired_sharepoint_links.py            # Fix the links
+
+# Verify the fix worked:
+# Check that resume_links no longer contain "tempauth" tokens
+```
+
+**Zapier CSV upload fails with "invalid" error:**
+```bash
+# Issue: CSV fields with embedded newlines can break Zapier's parser
+# Solution: Export uses QUOTE_ALL to quote every field
+
+# The segmented export scripts have been optimized:
+# - export_segmented_ai_full.py: Uses QUOTE_ALL, removes null bytes, truncates >100KB
+# - Segments reduced from 27 to 14 (2x multiplier for efficiency)
+# - All segments stay under 50MB for Zapier compatibility
+
+# If a specific segment fails:
+cd utilities/fixes
+python fix_corrupted_segment.py <segment_number>
+```
+
+**Key Learnings - SharePoint Links:**
+- ✅ **Always use `webUrl`** - Permanent links that never expire
+- ❌ **Never use `@microsoft.graph.downloadUrl`** - Temporary links with expiring tokens
+- Scripts fixed: `update_missing_resumes.py`, `map_ai_access_links.py`
+- Database field: `resume_links` should contain permanent webUrl links only
+
+**Key Learnings - CSV Exports:**
+- Segmented exports optimized for Zapier (50MB limit)
+- Use `quoting=1` (QUOTE_ALL) to prevent CSV parsing issues
+- Remove null bytes (`\x00`) and truncate resume_content >100KB
+- 2x multiplier reduces upload count while staying under limits
+
 ---
 
 ## 📚 Individual Project Details
