@@ -1,0 +1,17 @@
+Segmented AI Access Export Manifest (LIGHTWEIGHT)
+Generated: 2026-01-26 17:54:14
+Total Candidates: 50,680
+Total Segments: 1
+
+Segments:
+--------------------------------------------------------------------------------
+segment_001_of_001.csv                   50,680 rows    32.6 MB  IDs: 5199821008 to 53530508008
+--------------------------------------------------------------------------------
+
+NOTE: This export does NOT include resume_content to keep files under 50MB.
+AI agents should fetch resume_content via Greenhouse API when needed:
+  GET https://harvest.greenhouse.io/v1/candidates/{candidate_id}
+  Custom Field: resume_content (ID: 11138961008)
+
+Upload Order: Upload segments to Zapier in numerical order (001, 002, 003, ...)
+Each segment can be uploaded separately to append rows.

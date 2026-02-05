@@ -1,0 +1,38 @@
+Segmented AI Access Export Manifest (FULL with resume_content)
+Generated: 2025-12-06 16:06:07
+Total Candidates: 44,689
+Total Segments: 24
+Segments over 50MB: 0
+
+Segments:
+------------------------------------------------------------------------------------------
+segment_001_of_024_full.csv                         1,939 rows    19.9 MB  IDs: 5199821008 to 5618693008
+segment_002_of_024_full.csv                         1,939 rows    12.0 MB  IDs: 5618694008 to 5620688008
+segment_003_of_024_full.csv                         1,939 rows     8.9 MB  IDs: 5620689008 to 5622711008
+segment_004_of_024_full.csv                         1,939 rows     6.7 MB  IDs: 5622712008 to 5624743008
+segment_005_of_024_full.csv                         1,939 rows     8.7 MB  IDs: 5624744008 to 5626758008
+segment_006_of_024_full.csv                         1,939 rows    14.5 MB  IDs: 5626759008 to 6895756008
+segment_007_of_024_full.csv                         1,939 rows    20.8 MB  IDs: 6895968008 to 9431695008
+segment_008_of_024_full.csv                         1,939 rows    14.5 MB  IDs: 9431710008 to 10147537008
+segment_009_of_024_full.csv                         1,939 rows    17.8 MB  IDs: 10147538008 to 12197164008
+segment_010_of_024_full.csv                         1,939 rows    23.0 MB  IDs: 12198094008 to 13638566008
+segment_011_of_024_full.csv                         1,939 rows    16.3 MB  IDs: 13638567008 to 17983250008
+segment_012_of_024_full.csv                         1,939 rows    12.1 MB  IDs: 17990369008 to 23860486008
+segment_013_of_024_full.csv                         1,939 rows    14.3 MB  IDs: 23861038008 to 34481347008
+segment_014_of_024_full.csv                         1,939 rows    13.9 MB  IDs: 34481351008 to 37836206008
+segment_015_of_024_full.csv                         1,939 rows    21.9 MB  IDs: 37836207008 to 39291055008
+segment_016_of_024_full.csv                         1,939 rows    21.8 MB  IDs: 39291056008 to 40069653008
+segment_017_of_024_full.csv                         1,939 rows    11.9 MB  IDs: 40070103008 to 41019899008
+segment_018_of_024_full.csv                         1,939 rows    17.4 MB  IDs: 41020067008 to 42486377008
+segment_019_of_024_full.csv                         1,939 rows    18.0 MB  IDs: 42486390008 to 42763983008
+segment_020_of_024_full.csv                         1,939 rows    16.5 MB  IDs: 42764026008 to 43498644008
+segment_021_of_024_full.csv                         1,939 rows    12.9 MB  IDs: 43498685008 to 44837619008
+segment_022_of_024_full.csv                         1,939 rows    13.9 MB  IDs: 44837643008 to 45868865008
+segment_023_of_024_full.csv                         1,939 rows    14.4 MB  IDs: 45869363008 to 47335309008
+segment_024_of_024_full.csv                            92 rows     0.7 MB  IDs: 47335509008 to 47364984008
+------------------------------------------------------------------------------------------
+
+NOTE: This export includes resume_content which significantly increases file size.
+For Zapier (50MB limit), use export_segmented_ai.py (without resume_content) instead.
+
+Upload Order: Upload segments in numerical order (001, 002, 003, ...)

@@ -1,0 +1,11 @@
+Incremental Export Manifest
+======================================================================
+Export Date: 2026-01-26 17:53:24
+Export Type: Incremental
+Filter: All candidates (full export)
+Total Segments: 1
+Total Rows: 50,680
+Max Candidate ID: 53530508008
+
+Segment Files:
+  - segment_001_of_001_incremental.csv

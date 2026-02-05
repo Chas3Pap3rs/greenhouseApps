@@ -1,0 +1,27 @@
+Segmented Export Manifest
+Generated: 2025-12-04 23:02:40
+Total Candidates: 48,070
+Total Segments: 16
+
+Segments:
+--------------------------------------------------------------------------------
+segment_001_of_016.csv                    3,119 rows    28.0 MB  IDs: 5199821008 to 5619912008
+segment_002_of_016.csv                    3,119 rows    14.9 MB  IDs: 5619913008 to 5623144008
+segment_003_of_016.csv                    3,119 rows    12.8 MB  IDs: 5623145008 to 5626406008
+segment_004_of_016.csv                    3,119 rows    24.1 MB  IDs: 5626407008 to 8189938008
+segment_005_of_016.csv                    3,119 rows    28.5 MB  IDs: 8189939008 to 10149830008
+segment_006_of_016.csv                    3,119 rows    31.6 MB  IDs: 10149837008 to 12868721008
+segment_007_of_016.csv                    3,119 rows    27.4 MB  IDs: 12868902008 to 19472132008
+segment_008_of_016.csv                    3,119 rows    22.1 MB  IDs: 19472803008 to 32601721008
+segment_009_of_016.csv                    3,119 rows    26.3 MB  IDs: 32606105008 to 38435859008
+segment_010_of_016.csv                    3,119 rows    33.4 MB  IDs: 38436516008 to 40135498008
+segment_011_of_016.csv                    3,119 rows    21.5 MB  IDs: 40135608008 to 42474606008
+segment_012_of_016.csv                    3,119 rows    28.2 MB  IDs: 42474633008 to 42887867008
+segment_013_of_016.csv                    3,119 rows    20.1 MB  IDs: 42887895008 to 44811519008
+segment_014_of_016.csv                    3,119 rows    21.4 MB  IDs: 44811525008 to 46681564008
+segment_015_of_016.csv                    3,119 rows     7.9 MB  IDs: 46681637008 to 48918307008
+segment_016_of_016.csv                    1,285 rows     0.9 MB  IDs: 48918539008 to 49924851008
+--------------------------------------------------------------------------------
+
+Upload Order: Upload segments in numerical order (001, 002, 003, ...)
+Zapier Tip: Each segment can be uploaded separately to append rows
