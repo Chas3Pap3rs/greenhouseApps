@@ -48,9 +48,10 @@ def estimate_rows_per_segment(sample_df, target_bytes):
     sample_bytes = len(sample_csv.encode('utf-8'))
     bytes_per_row = sample_bytes / len(sample_df)
     
-    # Calculate rows per segment with safety margin
+    # Calculate rows per segment with safety margin, then double it
+    # Previous exports showed max 24MB with conservative estimate, so 2x is safe
     # More conservative due to variable resume_content size
-    rows_per_segment = int((target_bytes * 0.8) / bytes_per_row)  # 80% to be safe
+    rows_per_segment = int((target_bytes * 0.8) / bytes_per_row) * 2  # 80% to be safe, then 2x
     
     return max(rows_per_segment, 50)  # Minimum 50 rows per segment
 
@@ -208,12 +209,20 @@ def export_segmented():
                 if len(segment_df) == 0:
                     break
                 
+                # Clean resume_content: remove null bytes and truncate if too long
+                if 'resume_content' in segment_df.columns:
+                    segment_df['resume_content'] = segment_df['resume_content'].fillna('').str.replace('\x00', '', regex=False)
+                    # Truncate extremely long resume_content (>100KB) to avoid CSV field size issues
+                    segment_df['resume_content'] = segment_df['resume_content'].apply(
+                        lambda x: x[:100000] + "\n\n[Content truncated due to length...]" if len(x) > 100000 else x
+                    )
+                
                 # Generate filename
                 segment_filename = f"segment_{segment_num:03d}_of_{estimated_segments:03d}_full.csv"
                 segment_path = os.path.join(export_dir, segment_filename)
                 
-                # Export segment
-                segment_df.to_csv(segment_path, index=False)
+                # Export segment with QUOTE_ALL to prevent CSV parsing issues in Zapier
+                segment_df.to_csv(segment_path, index=False, quoting=1)  # quoting=1 is csv.QUOTE_ALL
                 
                 # Check file size
                 file_size_mb = os.path.getsize(segment_path) / (1024 * 1024)
